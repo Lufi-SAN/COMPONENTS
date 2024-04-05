@@ -4,13 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document: MODALS</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+
+
 </head>
 <body>
     <main>
         <h1>MODALS PLAYTHRU</h1>
-        <button>OPEN THE MODAL</button>
+        <section>
+            <h2>THE DIFF</h2>
+            <article>
+                <h3>Regular modal</h3>
+                <button class="openModal1">OPEN THE MODAL</button>
+                <dialog class="dialog1">
+                    <p>This is a Modal, its really just a special box, think of it like a div ... With stuff</p>
+                    <button class="closeModal1">Close card</button>
+                </dialog>
+            </article>
 
+            <article>
+                <h3>Forms</h3>
+                <button class="openModal2">OPEN THE FORMMMM</button>
+                <dialog class="dialog2">
+                    <form action="">
+                        <label for="textInput">Enter sumn here:</label>
+                        <input type="text" name="textInput" id="textInput">
+                        <button type="submit" formmethod="dialog">Cancel</button>
+                        <button type="submit" class="closeModal2">Submit</button>    
+                    </form>
+                </dialog>
+            </article>
+        </section>
+
+        <script>
+            const openModalButton1 = document.querySelector(".openModal1")
+            const closeModalButton1 = document.querySelector(".closeModal1")
+            const dialog1 = document.querySelector(".dialog1")
+
+            openModalButton1.addEventListener("click", e => {
+                dialog1.showModal() // Use dialog.show() for dialog type: it'll not block out the backdrop, and you can scroll around like normal, like any popup
+            })
+
+            closeModalButton1.addEventListener("click", e => {
+                dialog1.close()
+            })
+
+
+            const openModalButton2 = document.querySelector(".openModal2")
+            const closeModalButton2 = document.querySelector(".closeModal2")
+            const dialog2 = document.querySelector(".dialog2")
+
+            openModalButton2.addEventListener("click", e => {
+                dialog2.showModal() 
+            })
+
+            closeModalButton2.addEventListener("click", e => {
+                dialog2.close()
+            })
+        </script>
     </main>
 </body>
 </html>
